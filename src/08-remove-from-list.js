@@ -18,21 +18,21 @@
  */
 
 function removeKFromList(l, k) {
-  let prev = l;
-  while (prev !== null) {
-    if (prev.value === k) {
-      prev = prev.next;
+  let node = l;
+  while (node !== null) {
+    if (node.value === k) {
+      node = node.next;
     } else break;
   }
-  if (prev === null) return null;
+  if (node === null) return null;
 
-  const res = prev;
+  const res = node;
 
-  while (prev.next !== null) {
-    if (prev.next.value === k) {
-      prev.next = prev.next.next;
+  while (node.next !== null) {
+    if (node.next.value === k) {
+      node.next = node.next.next;
     } else {
-      prev = prev.next;
+      node = node.next;
     }
   }
 
